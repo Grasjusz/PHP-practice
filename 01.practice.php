@@ -7,30 +7,31 @@ $input3 = readline("Input your second digit: ");
 switch ($input2){
     case ("/"):
         switch ($input1 or $input3){
-            case (0):
+            case ($input1 or $input3 == 0):
                 echo "You cannot dive by zero!";
+                break;
         }
 
         break;
 }
 
-function operator() {
-    if ("+") {
-        return '+';
+function operator($input1, $input2, $input3) {
+    if ($input2 == "+") {
+        return $input1 + $input3;
         }
-    elseif ("-") {
-        return '-';
+    elseif ($input2 == "-") {
+        return $input1 - $input3;
         }
-    elseif ("*") {
-        return '*';
+    elseif ($input2 == "*") {
+        return $input1 * $input3;
         }
-    elseif ("/") {
-        return '/';
+    elseif ($input2 == "/") {
+        return $input1 / $input3;
         }
-    elseif ("%") {
-        return '%';
+    elseif ($input2 == "%") {
+        return $input1 % $input3;
         }
 }
 
-echo $input1, operator($input2), $input3;
+echo operator($input1, $input2, $input3);
 
