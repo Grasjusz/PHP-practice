@@ -34,4 +34,5 @@ function operator($input1, $input2, $input3) {
 }
 
 echo operator($input1, $input2, $input3);
+var_dump($input3);
 
