@@ -21,6 +21,7 @@ if ($int3 == $int4){
     }
 else{
     echo"Unfortunately you missed! :(\nValid digit: $int4";
+
     }
 
 
