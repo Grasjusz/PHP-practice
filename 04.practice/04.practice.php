@@ -34,10 +34,21 @@ function sprawdz_telefon($telefon)
 function sprawdz_tresc($tresc)
 {
    $tresc = trim($tresc);
-   if(strlen($tresc) < 30)
+   if(strlen($tresc) < 10)
       return false;
    else
       return $tresc;
+}
+
+
+function vulgate($data)
+{
+    $words = array("dupa", "gey", "nigga");
+    foreach($words as $el)
+    {
+        if(str_contains($data, $el))
+            return $el;
+    }
 }
 
 $email = $_POST['email'];
@@ -52,7 +63,6 @@ if (!sprawdz_email($email))
       echo "Adres e-mail niepoprawny";
       $blad_danych = true;
    }
-
 
 $imie = sprawdz_imie($imie);
 if (!$imie)
@@ -71,10 +81,18 @@ if (!$tresc)
       echo "Niepoprawna treść";
       $blad_danych = true;
    }
+
+$nword = vulgate($tresc);
+if ($nword)
+    {
+    echo "W treści znajdują się słowa zabronione!!!<br> Wulgarne słowo: $nword <br>";
+    $blad_danych = true;
+    }
+
+
 if ($blad_danych)
    {
-      echo "Wystąpił jeden lub więcej błędów podczas";
-      echo "przetwarzania danych.";
+      echo "Wystąpił jeden lub więcej błędów podczas przetwarzania danych.";
    }
 else
    {
