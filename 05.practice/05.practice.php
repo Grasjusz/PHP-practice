@@ -9,10 +9,12 @@ require_once("05.practice-function.php");
 </head>
 <body>
 <?php
-
-   zdobadz_email("https://kursphp.com");
-
+   $result = zdobadz_email("https://kursphp.com/");
+   if ($result) {
+       echo "<p>Wiadomość została wysłana</p>";
+   } else {
+       echo "<p>Nie znaleziono adresu e-mail lub wystąpił błąd.</p>";
+   }
 ?>
-<p>Wiadomość została wysłana</p>
 </body>
 </html>

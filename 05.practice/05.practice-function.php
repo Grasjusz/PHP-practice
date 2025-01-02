@@ -40,6 +40,6 @@ function zdobadz_email($strona) {
     fclose($moj_plik); // zamknięcie pliku
 
     // usunięcie po wysłaniu e-mailem
-    unlink('tymczasowy_index.txt');
+   // unlink('tymczasowy_index.txt');
 }
 ?>
