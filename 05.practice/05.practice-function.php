@@ -34,7 +34,7 @@ function zdobadz_email($strona) {
     $adres = "przyklad@uzycia.pl";
     $tytul = "Adresy e-mail";
     $wiadomosc = "Znalezione adresy e-mail to:\n" . implode(", ", $adresy);
-    mail($adres, $tytul, $wiadomosc); // wysłanie e-maila
+   // mail($adres, $tytul, $wiadomosc); // wysłanie e-maila
 
     flock($moj_plik, LOCK_UN); // odblokowanie pliku
     fclose($moj_plik); // zamknięcie pliku
