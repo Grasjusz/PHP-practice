@@ -1,17 +1,21 @@
 <?php
 
+#set class Motorcycle with elements, set private and public properties
 class Motorcycle
 {
     public $model = "Yamaha";
-    public $tank = 15;
+    private $tank = 15;
     public $gasLeft = 5;
     public $consumption = 5;
 
-    public function getConsumption()
+    #set private only to be reachable from this method, cannot be usable from outer
+    #get the consumption
+    private function getConsumption()
     {
         return $this->consumption;
     }
 
+    #returns the integer value of a variable
     public function setConsuption($consumption)
     {
         $consuptionValue = intval($consumption);
@@ -21,6 +25,7 @@ class Motorcycle
         }
     }
 
+    #Count the distance and handle the error if not integer.
     public function distance()
     {
         if (is_int($this->consumption))
@@ -36,7 +41,7 @@ class Motorcycle
 
 $motorcycle = new Motorcycle();
 $motorcycle->setConsuption("ABCD");
-echo $motorcycle->distance(), "\n";
+echo $motorcycle->model . ", " . $motorcycle->distance()." kilometers left to empty tank" , "\n";
 
 $motorcycle->consumption = "abc";
 echo $motorcycle->distance();
