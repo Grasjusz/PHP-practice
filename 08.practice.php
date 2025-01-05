@@ -12,25 +12,26 @@ class Motorcycle
         return $this->consumption;
     }
 
-    public function setConsuption($spalanie)
+    public function setConsuption($consumption)
     {
-        $consuptionValue = intval($spalanie);
+        $consuptionValue = intval($consumption);
         if ($consuptionValue > 0 && $consuptionValue < 100)
         {
             $this->consumption = $consuptionValue;
-        
         }
     }
 
-    public function distance():
+    public function distance()
     {
         return $this->gasLeft / $this->consumption * 100;
     }
 
-    }
-
-
 }
+
+$motorcycle = new Motorcycle();
+$motorcycle->setConsuption("ABCD");
+echo $motorcycle->distance();
+
 
 
 
