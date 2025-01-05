@@ -23,16 +23,23 @@ class Motorcycle
 
     public function distance()
     {
-        return $this->gasLeft / $this->consumption * 100;
-    }
-
+        if (is_int($this->consumption))
+        {
+            return $this->gasLeft / $this->consumption * 100;
+        }
+        else
+        {
+            echo "Error occured! consuption is not an integer!";
+        }
+    } 
 }
 
 $motorcycle = new Motorcycle();
 $motorcycle->setConsuption("ABCD");
+echo $motorcycle->distance(), "\n";
+
+$motorcycle->consumption = "abc";
 echo $motorcycle->distance();
-
-
 
 
 
