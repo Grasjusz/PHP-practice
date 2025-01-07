@@ -55,8 +55,6 @@ function adult($wiek){
       }
 }
 
-
-
 wypisz_dzien_tygodnia($data);
 
 echo oblicz_dni($data), adult($wiek);
