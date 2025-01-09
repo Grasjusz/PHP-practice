@@ -1,5 +1,7 @@
 <?php
 
+/*Check for how long gas lasts with*/
+
 #set class Motorcycle with elements, set private and public properties
 class Motorcycle
 {

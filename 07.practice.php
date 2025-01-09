@@ -1,5 +1,6 @@
 <?php
 
+/*Testing OOP working, playing with classes*/
 class motorcycle
 {
     public $marka;

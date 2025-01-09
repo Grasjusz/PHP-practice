@@ -1,5 +1,8 @@
 <?php
 
+/* Form for email/subscryption */
+
+/* Check email with regex */
 function sprawdz_email($email)
 {
    $spr = '/^[a-zA-Z0-9.\-_]+@[a-zA-Z0-9\-.]+\.[a-zA-Z]{2,4}$/';
@@ -10,6 +13,7 @@ function sprawdz_email($email)
 }
 
 
+/* Check if name with regex*/
 function sprawdz_imie($imie)
 {
   $sprawdz = '/^[a-zA-ZŁŚĆŹŻĄĘÓŃąęółśżźćń]+$/';
@@ -22,6 +26,7 @@ function sprawdz_imie($imie)
       return false;
 }
 
+/* Check if telefon with regex*/
 function sprawdz_telefon($telefon)
 {
    $sprawdz = '/^[0-9]{9}$/';
@@ -31,6 +36,7 @@ function sprawdz_telefon($telefon)
       return false;
 }
 
+/* Check if content > 10 letters*/
 function sprawdz_tresc($tresc)
 {
    $tresc = trim($tresc);
@@ -40,7 +46,7 @@ function sprawdz_tresc($tresc)
       return $tresc;
 }
 
-
+/*Check swear words in content*/
 function vulgate($data)
 {
     $words = array("dupa", "gey", "nigga");
@@ -57,6 +63,8 @@ $imie = $_POST['imie'];
 $tel = $_POST['telefon'];
 $tresc = $_POST['tresc'];
 $blad_danych = false;
+
+/* Runnig functions and handle errors */
 
 if (!sprawdz_email($email))
    {
@@ -88,7 +96,6 @@ if ($nword)
     echo "W treści znajdują się słowa zabronione!!!<br> Wulgarne słowo: $nword <br>";
     $blad_danych = true;
     }
-
 
 if ($blad_danych)
    {
