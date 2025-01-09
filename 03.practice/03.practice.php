@@ -1,9 +1,12 @@
 <?php
 
+/* Get date of birth from form, print day of birth, check if adult or not > 18 */
+
 $data['dzien'] = $_POST['dzien'];
 $data['miesiac'] = $_POST['miesiac'];
 $data['rok'] = $_POST['rok'];
 
+/* Check day of week of birth (input date) */
 function wypisz_dzien_tygodnia($data)
 {
     $day = date("w", mktime (0,0,0,$data['miesiac'],
@@ -37,6 +40,7 @@ function wypisz_dzien_tygodnia($data)
 
 }
 
+/* Function that count days from yout birth to now and outputs number of days*/
 function oblicz_dni($data)
 {
   // 60 sekund to 1 minuta, 60 minut to 1 godzina, 24 godziny to 1 dzień
@@ -46,6 +50,7 @@ function oblicz_dni($data)
 
 $wiek = (date("Y") - $data['rok']);
 
+/* Checks if person is adult (set 18 years), outputs proper information adult or not*/
 function adult($wiek){
     if ($wiek >= 18){
         echo "Masz $wiek lat, a więc jesteś pełnoletni!";

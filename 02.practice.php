@@ -1,5 +1,8 @@
 <?php
 
+/* Playing with shell, coloring outout, simpple guessing game  */
+
+
 echo"Starting for loop, red for even numbers, gold for odd \n";
 $int = 0;
 for ($int = 0; $int < 20; $int+=1){
@@ -26,6 +29,7 @@ do {
 }
 while ($int2 > 0);
 
+#Guessing game, type your number and win:
 $int3 = readline("Choose beetwen 0 - 10: ");
 $int4 = rand(0, 10);
 if ($int3 == $int4){

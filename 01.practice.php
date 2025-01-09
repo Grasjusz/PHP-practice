@@ -1,4 +1,5 @@
 <?php
+/* Simple calculator in PHP with user input */
 
 $input1 = readline("Input your first digit: ");
 $input2 = readline("Input operator(+, -, *, /, %): ");
