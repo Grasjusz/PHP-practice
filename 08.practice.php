@@ -1,8 +1,9 @@
 <?php
 
-/*Check for how long gas lasts with*/
+/*Check for how long gas lasts with full tank*/
 
 #set class Motorcycle with elements, set private and public properties
+
 class Motorcycle
 {
     public $model = "Yamaha";
@@ -12,6 +13,7 @@ class Motorcycle
 
     #set private only to be reachable from this method, cannot be usable from outer
     #get the consumption
+
     private function getConsumption()
     {
         return $this->consumption;
@@ -28,6 +30,7 @@ class Motorcycle
     }
 
     #Count the distance and handle the error if not integer.
+    
     public function distance()
     {
         if (is_int($this->consumption))
